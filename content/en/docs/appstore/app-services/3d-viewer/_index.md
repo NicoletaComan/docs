@@ -214,6 +214,7 @@ For this widget to visualize a model correctly, set the following properties:
     * **Show navigation cube**  – determines if a navigation cube will appear at the upper-right corner of the viewer
     * **Show tooltip** determines if a tooltip will appear when the end-user clicks a model part; this accepts a Boolean value
     * **Automatically load parts** – determines if the model part will be loaded into the Viewer automatically; if set to **Yes**, the model will be automatically loaded as long as the Viewer receives the **Model ID** and **Model source type** values; if set to **No**, the model will only be loaded into the Viewer when triggered from the PS Tree part toggling (for this use case, add the [PS Tree](#ps-tree) widget so you can trigger the part loading by clicking the PS Tree)
+    * **Advance Configuration** - determines the behavior of the following features/widgets:[Section View](#section-view), [Preference](#preference); this accepts a JSON string
 * On the **Events** tab, there are some optional customization options for changing the widget's behavior:
     * **On selection change** – by binding a String attribute to the **Selection** property, you can use this attribute as an input parameter to add an action to trigger when the selection changes on the Viewer 
     * **On error** – by binding a String attribute to the **Error** property, you can obtain the error message raised by the Viewer and add custom actions to trigger when an error arises
@@ -292,11 +293,11 @@ With this widget, you can use the following filtering settings:
 
 - Filter PMI entities by type
 
-- Filter model view
+- Show model view or not
 
-- Filter design group
+- Show design group or not
 
-- Show assembly level PMI
+- Only show assembly level PMI or not
 
 For details on how this widget behaves in an app, see the [Setting Preferences](#set-preferences) section below.
 
@@ -586,9 +587,67 @@ The **Usage Dashboard** shows the real-time statistics about the usage of an app
 
 You can change the setting of the Preference widget to customize the behavior of the model and setup to your requirements.
 
+There are two ways to set Preference widget:
+
+In Mendix Studio Pro:
+
+You can think this is a kind of global setting.
+
+    1. Right click the [Viewer](#viewer)
+
+    2. Click **General** tab
+
+    3. Inject the below format JSON string into "Advance configuration" option
+
+{{< figure src="/attachments/appstore/app-services/3d-viewer/Viewer-advance-configuration.png" alt="advance-configuration" >}}
+
+    ```
+    {
+        "pmiPreference": {
+            "ignoredPMI": [ ], 
+            "ignoreModelView": false, 
+            "ignoreDesignGroup": false, 
+            "onlyShowAssemblyLevelPMI": false
+        }
+    }
+    ```
+
+    ```
+    const ignoredPMI = [
+        "BALLOON_NOTE",
+        "CALLOUT_DIMENSION_TYPE",
+        "CENTRELINE",
+        "CHAMFER_DIMENSION_TYPE",
+        "COORDINATE_SYSTEM",
+        "DATUM_TARGET",
+        "DIMENSION",
+        "FEATURE_CONTROL_FRAME",
+        "FEATURE_DATUM_TYPE",
+        "FEATURE_DISCRETE_JOIN_TYPE",
+        "LINE_WELD",
+        "MATERIAL_SPECIFICATION",
+        "MEASUREMENT_LOCATOR",
+        "MEASUREMENT_POINT",
+        "NOTE",
+        "ORGANIZATION",
+        "PART_SPECIFICATION",
+        "PMI_TABLE_TYPE",
+        "PROCESS_SPECIFICATION",
+        "REFERENCE_AXIS",
+        "REFERENCE_GEOMETRY",
+        "REFERENCE_PLANE",
+        "REFERENCE_POINT",
+        "SECTION",
+        "SPOT_WELD",
+        "SURFACE_FINISH",
+    ];
+    ```
+
+In your web app page:
+
 {{< figure src="/attachments/appstore/app-services/3d-viewer/preferences-general.png" alt="preferences-general" >}}
 
-On the **PMI** tab, you can set filtering options for PMI and click **Ok** to save the changes.
+Click caption "Preference" to show the dialog. You can set filtering options for PMI and click **Ok** to save the changes, also you can click **Reset** to reset all settings.
 
 ## 6 Read More
 
