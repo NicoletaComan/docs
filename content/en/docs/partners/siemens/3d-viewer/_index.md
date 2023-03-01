@@ -587,11 +587,11 @@ The **Usage Dashboard** shows the real-time statistics about the usage of an app
 
 ### 5.9 Setting Preferences {#set-preferences}
 
-You can change the settings of the Preferences widget to customize the behavior of the model and setup to suit your needs.
+You can change the settings of the Preference widget to customize the behavior of the model and set it up to suit your needs.
 
 {{< figure src="/attachments/partners/siemens/3d-viewer/preferences-general.png" alt="preferences-general" >}}
 
-Click the "Preference" button to display the dialog. You can set your filter as a preference in any combination you like, and when you click the **OK** button, the filter will take effect the next time you open a file; the **Reset** button clears all settings. This method can only set the preference when your application is running, but of course we also provide a more advanced method - before the application starts - to set your preference, for more details you can refer to [Advanced Configuration](#advance_configuration).
+Click **Preference** to display the dialog. You can set your filter as a preference in any combination you like, and when you click the **OK** button, the filter will take effect the next time you open a file; the **Reset** button clears all settings. This method can only set the preference when your application is running, but of course we also provide a more advanced method - before the application starts - to set your preference, for more details you can refer to [Advanced Configuration](#advance_configuration).
 
 ## 6 Advanced Configuration {#advance_configuration}
 
@@ -801,7 +801,7 @@ Here is a sample Preference configuration:
 Defines the PMI entities you do not want to display.
 
 * Type – array
-* Default value - *[ ]*
+* Default value - *`[ ]`*
 
 Available enumeration values:
 
