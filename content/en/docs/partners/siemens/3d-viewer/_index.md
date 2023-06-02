@@ -383,7 +383,7 @@ Follow these steps to display the model loading progress:
 
     {{< figure src="/attachments/partners/siemens/3d-viewer/runlocally-loadingprogress.jpg" alt="runlocally-loadingprogress" >}}
 
-### 5.3 Previewing models without uploading
+### 5.3 Previewing Models Without Uploading
 
 To preview a model directly without uploading to Mendix file storage, drag and drop the file into the Viewer and click **Upload**.
 
